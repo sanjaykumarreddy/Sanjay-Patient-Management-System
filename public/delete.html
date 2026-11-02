@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Patient | Sanjay Patient Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>SANJAY PATIENT MANAGEMENT SYSTEM</h1>
+    <p>Patient Records Management Portal</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="insert.html">Add Patient</a>
+    <a href="list.html">All Patients</a>
+    <a href="listOne.html">View One</a>
+    <a href="update.html">Update</a>
+    <a href="delete.html">Delete</a>
+</nav>
+
+<main class="container">
+    <h2>Delete Patient Record</h2>
+
+    <p>Select the patient you want to delete.</p>
+
+    <label for="deletePatientSelect">Patient ID - Patient Name</label>
+
+    <select id="deletePatientSelect">
+        <option value="">Loading patients...</option>
+    </select>
+
+    <button type="button"
+            id="deletePatientButton"
+            class="danger">
+        Delete Patient
+    </button>
+
+    <p id="message" role="status"></p>
+</main>
+
+<footer>
+    <p>© 2026 Sanjay Patient Management System</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

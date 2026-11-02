@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Patient | Sanjay Patient Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>SANJAY PATIENT MANAGEMENT SYSTEM</h1>
+    <p>Patient Records Management Portal</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="insert.html">Add Patient</a>
+    <a href="list.html">All Patients</a>
+    <a href="listone.html">View One</a>
+    <a href="update.html">Update</a>
+    <a href="delete.html">Delete</a>
+</nav>
+
+<main class="container">
+    <h2>Update Patient Details</h2>
+
+    <label for="updatePatientSelect">
+        Select Patient ID - Name
+    </label>
+
+    <select id="updatePatientSelect">
+        <option value="">Loading patients...</option>
+    </select>
+
+    <form id="updateForm" hidden>
+
+        <label for="patient_name">Patient Name</label>
+        <input
+            type="text"
+            id="patient_name"
+            name="patient_name"
+            maxlength="100"
+            required
+        >
+
+        <label for="email">Email</label>
+        <input
+            type="email"
+            id="email"
+            name="email"
+            maxlength="100"
+            required
+        >
+
+        <label for="phone_number">Phone Number</label>
+        <input
+            type="tel"
+            id="phone_number"
+            name="phone_number"
+            minlength="7"
+            maxlength="15"
+            required
+        >
+
+        <label for="gender">Gender</label>
+        <select id="gender" name="gender" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="age">Age</label>
+        <input
+            type="number"
+            id="age"
+            name="age"
+            min="0"
+            max="130"
+            required
+        >
+
+        <label for="problem">Problem</label>
+        <input
+            type="text"
+            id="problem"
+            name="problem"
+            maxlength="255"
+            required
+        >
+
+        <button type="submit">Update Patient</button>
+    </form>
+
+    <p id="message" role="status"></p>
+</main>
+
+<footer>
+    <p>© 2026 Sanjay Patient Management System</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

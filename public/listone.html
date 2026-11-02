@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Patient | Sanjay Patient Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>SANJAY PATIENT MANAGEMENT SYSTEM</h1>
+    <p>Patient Records Management Portal</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="insert.html">Add Patient</a>
+    <a href="list.html">All Patients</a>
+    <a href="listone.html">View One</a>
+    <a href="update.html">Update</a>
+    <a href="delete.html">Delete</a>
+</nav>
+
+<main class="container">
+    <h2>View Patient Details</h2>
+
+    <label for="patientSelect">Select Patient ID - Name</label>
+
+    <select id="patientSelect">
+        <option value="">Loading patients...</option>
+    </select>
+
+    <button type="button" id="viewPatient">
+        View Patient
+    </button>
+
+    <div id="patientDetails"></div>
+
+    <p id="message" role="status"></p>
+</main>
+
+<footer>
+    <p>© 2026 Sanjay Patient Management System</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

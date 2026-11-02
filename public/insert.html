@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Patient | Sanjay Patient Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>SANJAY PATIENT MANAGEMENT SYSTEM</h1>
+    <p>Patient Records Management Portal</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="insert.html">Add Patient</a>
+    <a href="list.html">All Patients</a>
+    <a href="listOne.html">View One</a>
+    <a href="update.html">Update</a>
+    <a href="delete.html">Delete</a>
+</nav>
+
+<main class="container">
+    <h2>Add New Patient</h2>
+
+    <form id="insertForm">
+        <label for="patient_id">Patient ID</label>
+        <input
+    type="text"
+    id="patient_id"
+    name="patient_id"
+    value="Auto Generated"
+    readonly
+>
+
+        <label for="patient_name">Patient Name</label>
+        <input id="patient_name" name="patient_name"
+               type="text" maxlength="100" required>
+
+        <label for="email">Email</label>
+        <input id="email" name="email"
+               type="email" maxlength="100" required>
+
+        <label for="phone_number">Phone Number</label>
+        <input id="phone_number" name="phone_number"
+               type="tel" minlength="7" maxlength="15" required>
+
+        <label for="gender">Gender</label>
+        <select id="gender" name="gender" required>
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="age">Age</label>
+        <input id="age" name="age"
+               type="number" min="0" max="130" required>
+
+        <label for="problem">Problem</label>
+        <input id="problem" name="problem"
+               type="text" maxlength="255" required>
+
+        <button type="submit">Add Patient</button>
+    </form>
+
+    <p id="message" role="status"></p>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

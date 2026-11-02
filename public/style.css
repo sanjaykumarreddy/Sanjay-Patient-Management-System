@@ -1,0 +1,684 @@
+
+
+:root {
+    --primary: #087f8c;
+    --primary-dark: #07545b;
+    --primary-light: #dff6f5;
+    --secondary: #3867d6;
+    --background: #f3f8fc;
+    --surface: #ffffff;
+    --text: #263746;
+    --muted: #708090;
+    --border: #dce7ee;
+    --success: #16845b;
+    --danger: #d93845;
+    --shadow: 0 12px 35px rgba(35, 76, 96, 0.10);
+    --radius: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--text);
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(101, 207, 206, 0.18),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 90% 85%,
+            rgba(76, 133, 226, 0.12),
+            transparent 32%
+        ),
+        linear-gradient(135deg, #f5fbff, #eaf5f7 55%, #f8fbff);
+
+    background-attachment: fixed;
+    line-height: 1.6;
+}
+
+/* 2. HEADER */
+
+header {
+    position: relative;
+    overflow: hidden;
+    padding: 35px 20px 30px;
+    text-align: center;
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(5, 68, 78, 0.97),
+            rgba(8, 127, 140, 0.94),
+            rgba(47, 112, 184, 0.94)
+        );
+
+    box-shadow: 0 5px 22px rgba(5, 68, 78, 0.18);
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    top: -145px;
+    right: 8%;
+    border: 35px solid rgba(255, 255, 255, 0.07);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+header h1 {
+    position: relative;
+    z-index: 1;
+    font-size: clamp(22px, 3vw, 35px);
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    line-height: 1.3;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+}
+
+header p {
+    position: relative;
+    z-index: 1;
+    margin-top: 9px;
+    font-size: 15px;
+    color: #e4ffff;
+    letter-spacing: 0.5px;
+}
+
+/* 3. NAVIGATION BAR */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    padding: 13px 18px;
+
+    background: rgba(255, 255, 255, 0.93);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid rgba(220, 231, 238, 0.9);
+    box-shadow: 0 4px 15px rgba(30, 75, 95, 0.06);
+}
+
+nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 16px;
+    border-radius: 9px;
+
+    color: #355363;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 650;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    color: #ffffff;
+    background: linear-gradient(135deg, #087f8c, #3867d6);
+    transform: translateY(-2px);
+    outline: none;
+}
+
+/* 4. MAIN CONTAINERS */
+
+.container {
+    width: min(92%, 680px);
+    margin: 42px auto;
+    padding: 32px;
+
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+    animation: fadeIn 0.45s ease;
+}
+
+.container.wide {
+    width: min(96%, 1450px);
+    max-width: 1450px;
+    padding: 30px;
+}
+
+/* 5. HEADINGS AND TEXT */
+
+h2 {
+    margin-bottom: 25px;
+    color: var(--primary-dark);
+    text-align: center;
+    font-size: clamp(23px, 3vw, 30px);
+    font-weight: 750;
+    line-height: 1.3;
+}
+
+h3 {
+    margin-bottom: 15px;
+    color: var(--primary-dark);
+}
+
+p {
+    overflow-wrap: anywhere;
+}
+
+/* 6. FORM LABELS */
+
+label {
+    display: block;
+    margin-top: 17px;
+    margin-bottom: 7px;
+
+    color: #334b5a;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* 7. INPUTS AND DROPDOWNS */
+
+input,
+select,
+textarea {
+    display: block;
+    width: 100%;
+    min-height: 46px;
+    padding: 12px 14px;
+
+    border: 1px solid #d4e1e9;
+    border-radius: 9px;
+
+    background-color: #fbfdff;
+    color: #263746;
+
+    font-family: inherit;
+    font-size: 15px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #9aabb7;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+    border-color: #9acbd0;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    background: #ffffff;
+    border-color: var(--primary);
+
+    box-shadow: 0 0 0 4px rgba(8, 127, 140, 0.11);
+}
+
+input:disabled,
+select:disabled,
+textarea:disabled {
+    background: #edf2f6;
+    cursor: not-allowed;
+}
+
+select {
+    cursor: pointer;
+}
+
+/* 8. BUTTONS */
+
+button,
+.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    min-height: 45px;
+    padding: 12px 22px;
+    margin-top: 20px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: linear-gradient(135deg, #087f8c, #1767b1);
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 13px rgba(8, 127, 140, 0.17);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+}
+
+button:hover,
+.button:hover {
+    filter: brightness(1.06);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 19px rgba(8, 127, 140, 0.24);
+}
+
+button:active,
+.button:active {
+    transform: translateY(0);
+}
+
+button:focus-visible,
+.button:focus-visible {
+    outline: 3px solid rgba(8, 127, 140, 0.35);
+    outline-offset: 3px;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* 9. DELETE BUTTON */
+
+button.danger,
+.danger {
+    background: linear-gradient(135deg, #e34d59, #bd263d);
+    box-shadow: 0 5px 13px rgba(217, 56, 69, 0.17);
+}
+
+button.danger:hover,
+.danger:hover {
+    box-shadow: 0 8px 19px rgba(217, 56, 69, 0.24);
+}
+
+/* 10. HOME PAGE */
+
+.hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 430px;
+    margin: 36px auto;
+    padding: 65px 22px;
+
+    width: min(94%, 1200px);
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.96),
+            rgba(226, 247, 247, 0.93),
+            rgba(235, 242, 255, 0.95)
+        );
+
+    border: 1px solid #ffffff;
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+}
+
+.hero::before,
+.hero::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.hero::before {
+    width: 280px;
+    height: 280px;
+    top: -130px;
+    right: -60px;
+    background: rgba(8, 127, 140, 0.09);
+}
+
+.hero::after {
+    width: 220px;
+    height: 220px;
+    bottom: -110px;
+    left: -50px;
+    background: rgba(56, 103, 214, 0.09);
+}
+
+.hero h2 {
+    margin-bottom: 15px;
+    font-size: clamp(28px, 4vw, 42px);
+}
+
+.hero p {
+    margin-bottom: 16px;
+    color: var(--muted);
+    font-size: 17px;
+}
+
+.home-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* 11. PATIENT TABLE */
+
+.table-wrap {
+    width: 100%;
+    margin-top: 22px;
+    overflow-x: auto;
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: #ffffff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    font-size: 14px;
+}
+
+thead {
+    background: linear-gradient(120deg, #07545b, #087f8c);
+    color: #ffffff;
+}
+
+th {
+    padding: 15px 13px;
+    text-align: left;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+td {
+    padding: 13px;
+    border-bottom: 1px solid #e6edf2;
+    color: #405361;
+    text-align: left;
+    overflow-wrap: anywhere;
+}
+
+tbody tr {
+    transition: background 0.2s ease;
+}
+
+tbody tr:nth-child(even) {
+    background: #f5fafc;
+}
+
+tbody tr:hover {
+    background: #e5f6f5;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* 12. SINGLE PATIENT DETAILS */
+
+#patientDetails {
+    margin-top: 25px;
+    padding: 23px;
+
+    border: 1px solid #cdebe9;
+    border-radius: 12px;
+
+    background: linear-gradient(135deg, #f0fbfa, #f5f8ff);
+
+    box-shadow: 0 5px 15px rgba(35, 76, 96, 0.05);
+}
+
+#patientDetails:empty {
+    display: none;
+}
+
+#patientDetails h3 {
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #d5e9ea;
+}
+
+#patientDetails p {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(213, 233, 234, 0.7);
+    color: #435765;
+}
+
+#patientDetails p:last-child {
+    border-bottom: none;
+}
+
+/* 13. SUCCESS AND ERROR MESSAGES */
+
+#message {
+    margin-top: 18px;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 650;
+    overflow-wrap: anywhere;
+}
+
+#message:empty {
+    display: none;
+}
+
+#message:not(:empty) {
+    padding: 12px 15px;
+    border-radius: 8px;
+    background: #edf8f3;
+    border-left: 4px solid var(--success);
+    color: var(--success);
+}
+
+/* 14. FOOTER */
+
+footer {
+    margin-top: 45px;
+    padding: 23px 15px;
+
+    background: linear-gradient(120deg, #07545b, #123f65);
+    color: #e8f7fa;
+
+    text-align: center;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* 15. FORM VISIBILITY */
+
+[hidden] {
+    display: none !important;
+}
+
+/* 16. SCROLLBAR */
+
+::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background: #edf3f7;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #a6c7ce;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #087f8c;
+}
+
+/* 17. ANIMATION */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 18. TABLET RESPONSIVENESS */
+
+@media (max-width: 900px) {
+    .container.wide {
+        width: 96%;
+        padding: 20px;
+    }
+
+    table {
+        min-width: 760px;
+    }
+
+    nav {
+        gap: 4px;
+    }
+
+    nav a {
+        padding: 9px 11px;
+    }
+}
+
+/* 19. MOBILE RESPONSIVENESS */
+
+@media (max-width: 600px) {
+    header {
+        padding: 27px 14px;
+    }
+
+    header h1 {
+        font-size: 22px;
+        letter-spacing: 0.5px;
+    }
+
+    header p {
+        font-size: 13px;
+    }
+
+    nav {
+        position: relative;
+        padding: 10px;
+        gap: 5px;
+    }
+
+    nav a {
+        padding: 9px 10px;
+        font-size: 12px;
+    }
+
+    .container,
+    .container.wide {
+        width: calc(100% - 24px);
+        margin: 22px auto;
+        padding: 19px;
+        border-radius: 12px;
+    }
+
+    h2 {
+        font-size: 23px;
+        margin-bottom: 20px;
+    }
+
+    input,
+    select,
+    textarea {
+        font-size: 16px;
+    }
+
+    button,
+    .button {
+        padding: 11px 16px;
+    }
+
+    .hero {
+        width: calc(100% - 24px);
+        min-height: 330px;
+        margin: 22px auto;
+        padding: 45px 18px;
+        border-radius: 15px;
+    }
+
+    .hero h2 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .home-buttons {
+        gap: 4px;
+    }
+
+    footer {
+        margin-top: 25px;
+        font-size: 12px;
+    }
+}
+
+/* 20. REDUCED MOTION ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
